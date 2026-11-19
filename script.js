@@ -61,7 +61,8 @@ const updateMusicButton = () => {
     musicToggle.setAttribute('aria-label', playing ? 'Pausar música de fondo' : 'Reproducir música de fondo');
     musicToggle.setAttribute('aria-pressed', String(playing));
 };
-const startMusic = () => {
+const startMusic = (withSound = false) => {
+    if (withSound) music.muted = false;
     music.play().then(updateMusicButton).catch(() => {});
 };
 musicToggle.onclick = () => {
@@ -74,6 +75,10 @@ musicToggle.onclick = () => {
 music.addEventListener('play', updateMusicButton);
 music.addEventListener('pause', updateMusicButton);
 startMusic();
+const activateMusic = () => {
+    music.muted = false;
+    startMusic(true);
+};
 ['click', 'touchstart', 'keydown'].forEach(event => {
-    document.addEventListener(event, startMusic, {once: true, passive: true});
+    document.addEventListener(event, activateMusic, {once: true, passive: true});
 });
