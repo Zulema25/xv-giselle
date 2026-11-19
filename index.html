@@ -9,7 +9,6 @@
 </head>
 <body>
 <header class="hero">
-    <button class="music-button" id="music-toggle" type="button" aria-label="Reproducir música de fondo" aria-pressed="false">♫ Música</button>
     <div class="hero-inner"><span class="eyebrow">UNA NOCHE PARA RECORDAR</span>
         <div class="ornament">✧ ─── ♧ ─── ✧</div>
         <p class="xv">Mis XV años</p>
@@ -25,6 +24,13 @@
         <p>Con mucha alegría en mi corazón, quiero invitarte a compartir conmigo una noche llena de magia, ilusión y
             felicidad, en la celebración de mis quince años.</p>
         <p class="signature">Katherine Giselle</p></section>
+    <section class="music-player-section">
+        <div class="music-player" aria-label="Reproductor de música">
+            <div class="music-info"><strong>Voy a conquistarte</strong><small>Joan Sebastian</small></div>
+            <button class="music-control" id="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">▶</button>
+            <div class="music-progress"><input id="music-progress" type="range" min="0" max="100" value="0" aria-label="Progreso de la canción"></div>
+        </div>
+    </section>
     <section class="count-section">
         <div class="reveal"><span class="eyebrow">CADA VEZ MÁS CERCA</span>
             <h2>Falta muy poco</h2>
@@ -58,7 +64,7 @@
                                              href="https://www.google.com/maps/search/?api=1&query=Domo+de+Buena+Vista+Tihuatlan+Veracruz"
                                              target="_blank" rel="noopener">Buscar ubicación ↗</a></article>
         </div>
-        <button class="text-button" id="calendar">+ Guardar fecha en mi calendario</button>
+
     </section>
     <section class="gallery-section reveal"><span class="eyebrow">INSTANTES QUE GUARDARÉ SIEMPRE</span>
         <h2>Recuerdos para siempre</h2>

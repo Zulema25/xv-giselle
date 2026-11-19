@@ -13,18 +13,330 @@
     cursor: pointer
 }
 
-body{overflow-x:hidden}img{max-width:100%}button,.btn,.outline{max-width:100%}.event-grid,.gift-grid,.gallery{width:100%}
-@media (max-width:900px){section{padding:72px 5vw}.hero{padding-left:5vw;padding-right:5vw}.hero h1{font-size:clamp(76px,15vw,120px)}.event-grid,.gift-grid{max-width:680px}.gallery{max-width:720px}}
-@media (max-width:650px){section{padding:58px 20px}.music-button{top:16px;right:16px;font-size:10px;padding:8px 10px}.hero{min-height:100svh;padding:90px 20px 34px}.hero h1{font-size:clamp(72px,22vw,100px);margin:14px 0 24px}.xv{font-size:29px}.date{font-size:10px;letter-spacing:.18em}h2{font-size:clamp(39px,12vw,58px)}.intro p,.gifts p{font-size:14px}.count{gap:4px;margin-top:28px}.count strong{font-size:clamp(30px,10vw,50px)}.count small{font-size:8px;letter-spacing:.06em}.event-grid,.gift-grid{grid-template-columns:1fr;gap:14px;margin-top:28px}.event-grid article{padding:28px 18px}.btn,.outline{padding:12px 17px}.text-button{display:inline-block;padding:12px 6px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:28px}.gallery button{min-width:0}.hint{font-size:10px}.closing{padding:90px 20px}}
-@media (max-width:380px){.hero h1{font-size:22vw}.music-button{top:12px;right:12px}.count strong{font-size:28px}.count small{font-size:7px}.gallery{gap:5px}}
+body {
+    overflow-x: hidden
+}
+
+img {
+    max-width: 100%
+}
+
+button, .btn, .outline {
+    max-width: 100%
+}
+
+.event-grid, .gift-grid, .gallery {
+    width: 100%
+}
+
+.music-player-section {
+    padding: 20px;
+    background: var(--cream)
+}
+
+.music-player {
+    max-width: 500px;
+    margin: auto;
+    padding: 10px 14px;
+    display: grid;
+    grid-template-columns:34px 1fr 34px;
+    gap: 11px;
+    align-items: center;
+    background: #e5f2f1;
+    border: 1px solid #84bdbb;
+    border-radius: 999px;
+    box-shadow: none;
+    text-align: left
+}
+
+.music-cover {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #84bdbb;
+    color: #fff;
+    font-size: 17px
+}
+
+.music-info {
+    min-width: 0
+}
+
+.music-info strong, .music-info small {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.music-info strong {
+    font: 17px 'Cormorant Garamond', Georgia, serif;
+    color: #397c7d
+}
+
+.music-info small {
+    font-size: 9px;
+    color: #5f9697
+}
+
+.music-control {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: #84bdbb;
+    color: #fff;
+    cursor: pointer;
+    font-size: 11px
+}
+
+.music-control:hover {
+    background: #5f9fa0
+}
+
+.music-progress {
+    grid-column: 2/3;
+    grid-row: 2;
+    margin-top: -5px
+}
+
+.music-progress input {
+    width: 100%;
+    height: 3px;
+    accent-color: #84bdbb;
+    cursor: pointer
+}
+
+.music-player-section {
+    padding: 30px 20px;
+    background: var(--cream)
+}
+
+.music-player {
+    max-width: 480px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: stretch;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left
+}
+
+.music-info strong {
+    font: 600 20px/1.2 Montserrat, Arial, sans-serif;
+    color: #84bdbb
+}
+
+.music-info small {
+    font-size: 14px;
+    color: #6d8888
+}
+
+.music-control {
+    align-self: center;
+    order: 3;
+    width: 46px;
+    height: 46px;
+    margin-top: 8px;
+    background: #84bdbb;
+    color: #fff;
+    font-size: 17px
+}
+
+.music-control:hover {
+    background: #6da9a8
+}
+
+.music-progress {
+    order: 2;
+    width: 100%;
+    margin: 10px 0 0
+}
+
+.music-progress input {
+    width: 100%;
+    height: 4px;
+    accent-color: #84bdbb;
+    cursor: pointer
+}
+
+:root {
+    --sage: #84bdbb;
+    --deep: #84bdbb
+}
+
+.count-section {
+    background: #84bdbb
+}
+
+.footer, footer {
+    background: #84bdbb
+}
+
+.closing {
+    background: linear-gradient(#84bdbb73, #84bdbb61), url('assets/foto-4.jpg') center 30%/cover
+}
+
+.closing h2 {
+    font-size: clamp(52px, 8vw, 88px)
+}
+
+.closing .signature {
+    font-size: clamp(62px, 8vw, 86px);
+    color: #84bdbb
+}
+
+@media (max-width: 900px) {
+    section {
+        padding: 72px 5vw
+    }
+
+    .hero {
+        padding-left: 5vw;
+        padding-right: 5vw
+    }
+
+    .hero h1 {
+        font-size: clamp(76px, 15vw, 120px)
+    }
+
+    .event-grid, .gift-grid {
+        max-width: 680px
+    }
+
+    .gallery {
+        max-width: 720px
+    }
+}
+
+@media (max-width: 650px) {
+    section {
+        padding: 58px 20px
+    }
+
+    .music-button {
+        top: 16px;
+        right: 16px;
+        font-size: 10px;
+        padding: 8px 10px
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 90px 20px 34px
+    }
+
+    .hero h1 {
+        font-size: clamp(72px, 22vw, 100px);
+        margin: 14px 0 24px
+    }
+
+    .xv {
+        font-size: 29px
+    }
+
+    .date {
+        font-size: 10px;
+        letter-spacing: .18em
+    }
+
+    h2 {
+        font-size: clamp(39px, 12vw, 58px)
+    }
+
+    .intro p, .gifts p {
+        font-size: 14px
+    }
+
+    .count {
+        gap: 4px;
+        margin-top: 28px
+    }
+
+    .count strong {
+        font-size: clamp(30px, 10vw, 50px)
+    }
+
+    .count small {
+        font-size: 8px;
+        letter-spacing: .06em
+    }
+
+    .event-grid, .gift-grid {
+        grid-template-columns:1fr;
+        gap: 14px;
+        margin-top: 28px
+    }
+
+    .event-grid article {
+        padding: 28px 18px
+    }
+
+    .btn, .outline {
+        padding: 12px 17px
+    }
+
+    .text-button {
+        display: inline-block;
+        padding: 12px 6px
+    }
+
+    .gallery {
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 28px
+    }
+
+    .gallery button {
+        min-width: 0
+    }
+
+    .hint {
+        font-size: 10px
+    }
+
+    .closing {
+        padding: 90px 20px;
+        background-position: 62% 42%
+    }
+}
+
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 22vw
+    }
+
+    .music-button {
+        top: 12px;
+        right: 12px
+    }
+
+    .count strong {
+        font-size: 28px
+    }
+
+    .count small {
+        font-size: 7px
+    }
+
+    .gallery {
+        gap: 5px
+    }
+}
 
 .music-button:hover {
     background: #18291bcc
 }
 
 :root {
-    --sage: #a3b9ac;
-    --deep: #41594c;
+    --sage: #84bdbb;
+    --deep: #84bdbb;
     --cream: #f7f3e9;
     --gold: #a48355;
     --ink: #493b30
@@ -341,7 +653,7 @@ section {
 }
 
 .closing {
-    background: linear-gradient(#253c30b8, #253c30e8), url('assets/foto-4.jpg') center 55%/cover;
+    background: linear-gradient(#84bdbbcc, #84bdbbe8), url('assets/foto-4.jpg') 65% 50%/cover;
     color: white;
     padding: 120px 25px
 }
@@ -355,7 +667,7 @@ section {
 }
 
 footer {
-    background: #293c32;
+    background: #84bdbb;
     color: #d9e0d8;
     padding: 22px;
     font-size: 9px;

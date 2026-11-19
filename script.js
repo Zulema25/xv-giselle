@@ -55,6 +55,8 @@ document.getElementById('calendar').onclick = () => {
 };
 const music = document.getElementById('background-music');
 const musicToggle = document.getElementById('music-toggle');
+const progress = document.getElementById('music-progress');
+const formatTime = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 const updateMusicButton = () => {
     const playing = !music.paused;
     musicToggle.textContent = playing ? 'Ⅱ Pausar música' : '♫ Reproducir música';
@@ -65,8 +67,19 @@ const startMusic = (withSound = false) => {
     if (withSound) music.muted = false;
     music.play().then(updateMusicButton).catch(() => {});
 };
+music.addEventListener('loadedmetadata', () => {
+    progress.max = 100;
+});
+music.addEventListener('timeupdate', () => {
+    if (!music.duration) return;
+    progress.value = (music.currentTime / music.duration) * 100;
+    progress.title = `${formatTime(music.currentTime)} / ${formatTime(music.duration)}`;
+});
+progress.addEventListener('input', () => {
+    if (music.duration) music.currentTime = (progress.value / 100) * music.duration;
+});
 musicToggle.onclick = () => {
-    if (music.paused) startMusic();
+    if (music.paused) startMusic(true);
     else {
         music.pause();
         updateMusicButton();
@@ -75,7 +88,8 @@ musicToggle.onclick = () => {
 music.addEventListener('play', updateMusicButton);
 music.addEventListener('pause', updateMusicButton);
 startMusic();
-const activateMusic = () => {
+const activateMusic = event => {
+    if (event.target.closest('#music-toggle')) return;
     music.muted = false;
     startMusic(true);
 };
