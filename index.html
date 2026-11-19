@@ -23,13 +23,14 @@
         <p>Hay momentos en la vida que merecen ser celebrados de una manera especial, y este es uno de ellos.</p>
         <p>Con mucha alegría en mi corazón, quiero invitarte a compartir conmigo una noche llena de magia, ilusión y
             felicidad, en la celebración de mis quince años.</p>
-        <p class="signature">Katherine Giselle</p></section>
+        <h4 class="signature">Katherine Giselle</h4></section>
     <section class="music-player-section">
         <div class="music-player" aria-label="Reproductor de música">
             <div class="music-info"><strong>Voy a conquistarte</strong><small>Joan Sebastian</small></div>
             <button class="music-control" id="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">▶</button>
             <div class="music-progress"><input id="music-progress" type="range" min="0" max="100" value="0" aria-label="Progreso de la canción"></div>
         </div>
+        <p id="music-status" role="status" hidden>No se pudo reproducir la canción. Toca Play para intentarlo de nuevo.</p>
     </section>
     <section class="count-section">
         <div class="reveal"><span class="eyebrow">CADA VEZ MÁS CERCA</span>
@@ -68,7 +69,14 @@
     </section>
     <section class="gallery-section reveal"><span class="eyebrow">INSTANTES QUE GUARDARÉ SIEMPRE</span>
         <h2>Recuerdos para siempre</h2>
-        <div class="gallery" id="gallery"></div>
+        <div class="photo-carousel" role="group" aria-label="Carrusel de fotos de Katherine">
+            <div class="carousel-track" id="gallery" tabindex="0" aria-label="Fotos. Usa las flechas del teclado para navegar."></div>
+            <div class="carousel-controls">
+                <button id="photo-prev" type="button" aria-label="Foto anterior">‹</button>
+                <span id="photo-count" aria-live="polite"></span>
+                <button id="photo-next" type="button" aria-label="Foto siguiente">›</button>
+            </div>
+        </div>
         <p class="hint">Toca cualquier fotografía para verla completa.</p></section>
     <section class="gifts reveal">
         <div class="symbol">♧</div>
@@ -87,7 +95,7 @@
     </section>
 </main>
 <footer>MIS XV AÑOS · KATHERINE GISELLE</footer>
-<audio id="background-music" autoplay muted loop preload="auto" src="assets/VOY%20A%20CONQUISTARTE%20LYRIC%20VIDEO%20OFICIAL.mp3"></audio>
+<audio id="background-music" loop preload="metadata" src="assets/VOY%20A%20CONQUISTARTE%20LYRIC%20VIDEO%20OFICIAL.mp3"></audio>
 <dialog id="lightbox">
     <button id="close" aria-label="Cerrar fotografía">×</button>
     <img id="full" alt="Fotografía de Katherine"></dialog>
