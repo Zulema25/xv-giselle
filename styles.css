@@ -729,6 +729,23 @@ section {
     color: white
 }
 
+section.attendance {
+    padding: clamp(40px, 7vw, 72px) 20px;
+}
+
+.attendance .attendance-button {
+    border-color: transparent;
+    background: #84bdbb;
+    color: #183938;
+    border-radius: 999px;
+}
+
+.attendance .attendance-button:hover,
+.attendance .attendance-button:focus-visible {
+    background: #254a49;
+    color: white;
+}
+
 .closing .signature {
     margin-bottom: 25px
 }
